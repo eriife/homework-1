@@ -1,0 +1,25 @@
+//Processed by Eri-ife Olayinka
+
+
+//these do not get redrawn each time the code is run
+void setup(){
+  size(800,800);
+}
+
+//these get redrawn every time the code is run
+void draw(){
+  background(255,255,255);
+  fill(227,139,57);
+  //this makes it so that the xpos and ypos of the circle are 50 to the right and 50 down of the arrow
+  ellipse(mouseX+50, mouseY+50,50,50);
+  
+  fill(227,190,57);
+  ellipse(mouseX-50, mouseY-50,50,50);
+  
+  fill(158,227,57);
+  ellipse(mouseX-50,mouseY+50,50,50);
+  
+  fill(57,227,135);
+  ellipse(mouseX+50,mouseY-50,50,50);
+
+}

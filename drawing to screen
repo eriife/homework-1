@@ -1,0 +1,31 @@
+//sets the size of the screen
+size(1000,500);
+
+//sets the background colour of the screen (red,green,blue)
+background(147,101,44);
+
+//sets the colou of the inside of shapes (red,green,blue)
+fill(44,144,147);
+
+//to draw a rectangle: rect(x-position, y-position, width, height)
+rect(60,60,250,250);
+
+fill(00,00,00);
+
+noStroke();
+//draw an ellipse: ellipse(xpos, ypos, width, height)
+ellipse(200,200,100,50);
+
+//changes the colour of lines and borders of shapes
+stroke(255,0,0);
+strokeWeight(20);
+
+
+//to draw a line: line(x1,y1,x2,y2)
+line(70,500,400,400);
+
+//to draw a triangle: triangle(x1,y1,x2,y2,x3,y3)
+triangle( 250,250,375,125, 125,125);
+
+//to draw a quadrialteral: quad(x1,y1,x2,y2,x3,y3,x4,y4)
+quad(300,100,300,400,225,100,275,400);

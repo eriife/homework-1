@@ -1,0 +1,23 @@
+void setup(){
+  size(600,600);
+}
+
+void draw(){
+  if (mouseX<width/2 && mouseY<height/2){
+   background(196,140,18); 
+   
+  } else if(mouseX>width/2 && mouseY<height/2){
+   background(109,196,18);
+   
+  } else if(mouseX<width/2 && mouseY>height/2){
+   background(18,196,120);
+   
+  }else if(mouseX>width/2 && mouseY>height/2){
+   background(0,0,0); 
+  }else{
+   background(255,255,255); 
+  }
+  
+  line(width/2,0,width/2,height);
+  line(0,height/2,width,height/2);
+}

@@ -1,0 +1,30 @@
+float w1 = 300;
+float h1 = 300;
+float d = 20;
+float red = 255;
+float blue = 0;
+
+
+void setup(){
+  size(600,600);
+}
+
+void draw(){
+ background(red,0,blue); 
+ fill(219,204,66);
+ ellipse(w1,h1,50,50);
+ if (w1 < 0){
+d = d * -1;
+red = red - 5;
+blue = blue + 5;
+} else if (w1 > 600){
+d = d * -1;
+red = red - 5;
+blue = blue+5;
+}
+w1 = w1 + d;
+}
+
+void mousePressed(){
+  
+}

@@ -1,0 +1,72 @@
+float w1 = random(600);
+
+float h1 = 0;
+
+float d = 8;
+
+int s = 0;
+
+float red = 100;
+
+float blue = 100;
+
+float win = 0;
+
+float lose = 0;
+
+String var1 = "you win!!!";
+
+String var2 = "you lose:(";
+
+
+
+void setup(){
+ size(600,600);
+}
+
+void draw(){
+  background(red,0,blue);
+  textSize(25);
+  text(s, 550,50);
+  fill(0,0,0);
+   rect(mouseX, 550, 150, 25);
+
+  ellipse(w1,h1,50,50);
+h1 =  h1 + d;
+if(h1 > 600){
+h1 = 0;
+w1 = random(600);
+d = d + 1;
+s = s - 1;
+red = red + 10;
+blue = blue - 10;
+}
+if(w1>mouseX && w1<mouseX + 150 && h1>550 && h1>575){
+  h1 = 0;
+  w1 = random(600);
+  d = d +1;
+  s = s + 1;
+  red = red - 10;
+  blue = blue +10;
+}
+
+if(s>10){
+  win = 1;
+}
+
+if(win==1){
+  background(255,255,255);
+  textSize(65);
+  text(var1, 150,300);
+}
+
+if(s<-10){
+  lose = 1;
+}
+if(lose==1){
+  background(0,0,0);
+  fill(255,255,255);
+  textSize(50);
+  text(var2,150,300);
+}
+}

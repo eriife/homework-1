@@ -1,0 +1,139 @@
+//main code
+
+
+King bKing;
+
+
+void setup(){
+ size(800,800);
+    bKing = new King(450,717.5);
+
+}
+//draw the board
+//void drawBoard(){
+
+  
+  //strokeWeight (3);
+  //stroke (98, 71, 50); // Outline Color
+  //fill(124, 92, 70); // Color of Dark Tiles
+  //rect(100, 100, 100*wS, 100*hS);
+  //for (int x=100; x<100*wS; x+=200) {
+  //  for (int y=100; y<100*hS; y+=200) {
+    //  fill (211, 190, 150); // Color of Light Tiles
+      //rect (x, y, 100, 100);
+      //rect (x+100, y+100, 100, 100);
+    //}
+  //}
+
+//}
+
+void draw(){
+  noFill();
+     background (171, 173, 172); // Background Color
+
+     bKing.display();
+       line(400,0,400,1000);
+
+}
+
+void mouseClicked(){
+    if(mouseX>bKing.getx()+50 && mouseX<bKing.getx()+100 && mouseY>bKing.gety()-12.5 && mouseY<bKing.gety()+87.5){
+    bKing.setx(bKing.getx() + 100);
+    bKing.sety(bKing.gety());
+      
+    }
+     if(mouseX<bKing.getx()-50 && mouseX>bKing.getx()-100 && mouseY>bKing.gety()-12.5 && mouseY<bKing.gety()+87.5){
+    bKing.setx(bKing.getx() - 100);
+    bKing.sety(bKing.gety());
+      
+    }
+    
+     if(mouseX>bKing.getx()-50 && mouseX<bKing.getx() + 50 && mouseY<bKing.gety()-12.5 && mouseY>bKing.gety()-112.5){
+           bKing.sety(bKing.gety()-100);
+    bKing.setx(bKing.getx());
+    
+    }
+     if(mouseX>bKing.getx()-50 && mouseX<bKing.getx() + 50 && mouseY>bKing.gety()+82.5 && mouseY<bKing.gety()+182.5){
+           bKing.sety(bKing.gety()+100);
+    bKing.setx(bKing.getx());
+
+     }
+     //diagonal top right
+     if(mouseX>bKing.getx()+50 && mouseX<bKing.getx()+150 && mouseY<bKing.gety()-12.5 && mouseY>bKing.gety()-112.5){
+      bKing.setx(bKing.getx()+100);
+      bKing.sety(bKing.gety()-100);
+     }
+    //diagonal top left
+    if(mouseX<bKing.getx()-50 && mouseX>bKing.getx()-150 && mouseY<bKing.gety()-12.5 && mouseY>bKing.gety()-112.5){
+     bKing.setx(bKing.getx()-100);
+     bKing.sety(bKing.gety()-100);
+    }
+    //diagonal bottom right
+    if(mouseX>bKing.getx()+50 && mouseX<bKing.getx()+150 && mouseY<bKing.gety()+182.5 && mouseY>bKing.gety()+82.5){
+     bKing.setx(bKing.getx()+100);
+     bKing.sety(bKing.gety()+100);
+    }
+    //diagonal bottom left
+    if(mouseX>bKing.getx()-150 && mouseX<bKing.getx()-50 && mouseY>bKing.gety()+82.5 && mouseY<bKing.gety()+182.5){
+     bKing.setx(bKing.getx()-100);
+     bKing.sety(bKing.gety()+100);
+    }
+     
+    
+    
+}
+
+
+
+
+//King class
+
+class King{
+ float xpos;
+ float ypos;
+  
+  King(float tempXpos, float tempYpos){
+    xpos = tempXpos;
+    ypos = tempYpos;
+    
+  }
+  
+  
+  void display(){ 
+    stroke(0,0,0);
+    strokeWeight(1);
+    rectMode(CENTER);
+    fill(0,0,0);
+    line(xpos,ypos-12.5,xpos,ypos+12.5);
+    line(xpos-10,ypos,xpos+10,ypos);
+    strokeWeight(3);
+    triangle(xpos-15,ypos+12.5,xpos+15,ypos+12.5,xpos,ypos+37.5);
+    triangle(xpos,ypos+37.5,xpos+25,ypos+72.5,xpos-25,ypos+72.5);
+    rect(xpos,ypos+80,70,15);
+    
+  }      
+      
+      
+    
+  
+  
+  
+  float getx(){
+    return xpos;
+  }
+  
+  float gety(){
+    return ypos;
+  }
+  
+  void setx(float tempXpos){
+    xpos = tempXpos;
+  }
+  
+  void sety(float tempYpos){
+    ypos = tempYpos;
+  }
+  
+  }
+  
+  
